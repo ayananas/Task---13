@@ -127,5 +127,5 @@ const ArrowImage = styled.img`
 const SubContainer = styled.section``;
 const MenuBar = styled.aside``;
 const MenuList = styled.ul``;
-
+const Item = styled.li``;
 const Container = styled.section``;
