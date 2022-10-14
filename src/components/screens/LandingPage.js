@@ -1,8 +1,13 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 
 function LandingPage() {
+    const [select, setSelect] = useState("betterPriceOnly");
+    const handleSelectChange = (event) => {
+        const value = event.target.value;
+        setSelect(value);
+    };
     return (
         <>
             <Navbar />
@@ -248,7 +253,90 @@ function LandingPage() {
                                         </OwnerDetails>
                                     </ContactDetails>
                                 </Owner>
-                                <Insurance></Insurance>
+                                <Insurance>
+                                    <InsuranceHeading>
+                                        Insurance Options
+                                    </InsuranceHeading>
+                                    <Item1>
+                                        <RadioButton
+                                            type="radio"
+                                            name="radio"
+                                            value="No Insurance"
+                                            checked={select === "No Insurance"}
+                                            onChange={(event) =>
+                                                handleSelectChange(event)
+                                            }
+                                        />
+                                        <RadioButtonLabel />
+                                        <InsurePolicy>
+                                            <InsuranceLeft>
+                                                <Insure>No Insurance</Insure>
+                                                <InsureContent>
+                                                    No Insurance selected
+                                                </InsureContent>
+                                            </InsuranceLeft>
+                                            <InsuranceRight>
+                                                <Dollar>$0.00</Dollar>
+                                                <DollarDay>$14/day</DollarDay>
+                                            </InsuranceRight>
+                                        </InsurePolicy>
+                                    </Item1>
+                                    <Item1>
+                                        <RadioButton
+                                            type="radio"
+                                            name="radio"
+                                            value="Collision protection"
+                                            checked={
+                                                select ===
+                                                "Collision protection"
+                                            }
+                                            onChange={(event) =>
+                                                handleSelectChange(event)
+                                            }
+                                        />
+                                        <RadioButtonLabel />
+                                        <InsurePolicy>
+                                            <InsuranceLeft>
+                                                <Insure>
+                                                    Collision protection
+                                                </Insure>
+                                                <InsureContent>
+                                                    collision protection on
+                                                    vechile only
+                                                </InsureContent>
+                                            </InsuranceLeft>
+                                            <InsuranceRight>
+                                                <Dollar>$0.00</Dollar>
+                                                <DollarDay>$14/day</DollarDay>
+                                            </InsuranceRight>
+                                        </InsurePolicy>
+                                    </Item1>
+                                    <Item1>
+                                        <RadioButton
+                                            type="radio"
+                                            name="radio"
+                                            value="Third party"
+                                            checked={select === "Third party"}
+                                            onChange={(event) =>
+                                                handleSelectChange(event)
+                                            }
+                                        />
+                                        <RadioButtonLabel />
+                                        <InsurePolicy>
+                                            <InsuranceLeft>
+                                                <Insure>Third party</Insure>
+                                                <InsureContent>
+                                                    3rd party liability
+                                                    insurance only
+                                                </InsureContent>
+                                            </InsuranceLeft>
+                                            <InsuranceRight>
+                                                <Dollar>$0.00</Dollar>
+                                                <DollarDay>$14/day</DollarDay>
+                                            </InsuranceRight>
+                                        </InsurePolicy>
+                                    </Item1>
+                                </Insurance>
                             </Right>
                         </DetailsContainer>
                     </LeftContainer>
@@ -430,22 +518,157 @@ const FacilityContent = styled.span`
     font-family: "LatoBold";
 `;
 const Right = styled.div`
-    width: 48%;
+    width: 42%;
 `;
-const Owner = styled.div``;
-const OwnerTitle = styled.h4``;
-const ContactDetails = styled.div``;
-const OwnerImage = styled.div``;
-const OwnerImg = styled.img``;
+const Owner = styled.div`
+    margin-bottom: 95px;
+`;
+const OwnerTitle = styled.h4`
+    font-size: 25px;
+    font-family: "LatoBold";
+    margin-bottom: 12px;
+`;
+const ContactDetails = styled.div`
+    display: flex;
+    align-items: center;
+`;
+const OwnerImage = styled.div`
+    width: 70px;
+    margin-right: 15px;
+`;
+const OwnerImg = styled.img`
+    display: block;
+    width: 100%;
+    border-radius: 50%;
+`;
 const OwnerId = styled.div``;
-const OwnerName = styled.h2``;
-const OwnerUserName = styled.blockquote``;
-const OwnerDetails = styled.div``;
-const OwnerMessage = styled.div``;
-const MessageImg = styled.img``;
-const OwnerPhone = styled.div``;
-const PhoneImg = styled.img``;
+const OwnerName = styled.h2`
+    font-size: 20px;
+    font-family: "LatoBold";
+    margin-bottom: 10px;
+`;
+const OwnerUserName = styled.blockquote`
+    font-size: 18px;
+    font-family: "LatoBold";
+    opacity: 0.4;
+`;
+const OwnerDetails = styled.div`
+    display: flex;
+    margin-left: 80px;
+`;
+const OwnerMessage = styled.div`
+    width: 50px;
+    margin-right: 12px;
+    background: #ff724a66;
+    padding: 10px;
+    border-radius: 15px;
+`;
+const MessageImg = styled.img`
+    display: block;
+    width: 100%;
+`;
+const OwnerPhone = styled.div`
+    width: 50px;
+    background: #379e635e;
+    padding: 10px;
+    border-radius: 15px;
+`;
+const PhoneImg = styled.img`
+    display: block;
+    width: 100%;
+`;
 const Insurance = styled.div``;
+const InsuranceHeading = styled.h4`
+    margin-bottom: 40px;
+    font-size: 20px;
+    font-family: "LatoBold";
+`;
 const RightContainer = styled.div`
     width: 30%;
+`;
+const Item1 = styled.div`
+    display: flex;
+    align-items: center;
+    height: 64px;
+    position: relative;
+`;
+
+const RadioButtonLabel = styled.label`
+    position: absolute;
+    top: 25%;
+    left: 4px;
+    width: 24px;
+    height: 24px;
+    border-radius: 50%;
+    background: white;
+    border: 1px solid #bebebe;
+`;
+const RadioButton = styled.input`
+    opacity: 0;
+    z-index: 1;
+    border-radius: 50%;
+    width: 24px;
+    height: 24px;
+    margin-right: 10px;
+    &:hover ~ ${RadioButtonLabel} {
+        background: #bebebe;
+        &::after {
+            content: "";
+            display: block;
+            border-radius: 50%;
+            width: 12px;
+            height: 12px;
+            margin: 6px;
+            background: #eeeeee;
+        }
+    }
+    ${(props) =>
+        props.checked &&
+        ` 
+    &:checked + ${RadioButtonLabel} {
+      background: #fff;
+      border: 2px solid grey;
+      &::after {
+        content: "";
+        display: block;
+        border-radius: 50%;
+        width: 14px;
+        height: 14px;
+        margin: 3px;
+        box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
+        background: #FF724A;
+      }
+    }
+  `}
+`;
+const InsurePolicy = styled.div`
+    display: flex;
+    align-items: center;
+    margin-left: 15px;
+    width: 80%;
+    justify-content: space-between;
+`;
+const InsuranceLeft = styled.div``;
+const Insure = styled.span`
+    display: block;
+    font-family: "LatoBold";
+`;
+const InsureContent = styled.p`
+    display: block;
+    font-family: "LatoBold";
+    opacity: 0.5;
+    font-size: 15px;
+`;
+const InsuranceRight = styled.div`
+    text-align: right;
+`;
+const Dollar = styled.span`
+    display: block;
+    font-family: "LatoBlack";
+`;
+const DollarDay = styled.p`
+    display: block;
+    font-family: "LatoBlack";
+    opacity: 0.5;
+	font-size: 15px;
 `;
