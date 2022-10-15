@@ -51,6 +51,9 @@ const Header = styled.header`
     @media all and (max-width: 1440px) {
         height: 120px;
     }
+    @media all and (max-width: 1380px) {
+        padding-left: 140px;
+    }
 `;
 const LeftContainer = styled.div`
     display: flex;
@@ -61,6 +64,9 @@ const LeftContainer = styled.div`
 const Heading = styled.h1`
     font-size: 35px;
     font-family: "LatoBold";
+    @media all and (max-width: 1380px) {
+        font-size: 32px;
+    }
 `;
 const Form = styled.form`
     display: flex;

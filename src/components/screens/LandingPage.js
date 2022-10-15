@@ -466,6 +466,9 @@ const Heading3 = styled.h3`
     font-size: 30px;
     font-family: "LatoBold";
     margin-bottom: 15px;
+    @media all and (max-width: 1380px) {
+        font-size: 27px;
+    }
 `;
 const ReviewPara = styled.p`
     display: flex;
@@ -495,6 +498,9 @@ const Description = styled.p`
     width: 70%;
     @media all and (max-width: 1440px) {
         width: 100%;
+    }
+    @media all and (max-width: 1380px) {
+        width: 380px;
     }
 `;
 const Include = styled.div``;
@@ -650,6 +656,9 @@ const RentHeader = styled.h4`
     @media all and (max-width: 1440px) {
         width: 45%;
         padding: 14px;
+    }
+    @media all and (max-width: 1380px) {
+        width: 50%;
     }
 `;
 const RentItems = styled.ul`
