@@ -577,7 +577,7 @@ const RentItems = styled.ul`
 const RentItem = styled.li`
     margin-bottom: 24px;
 `;
-const Up = styled.h6`
+const Up = styled.h5`
     font-family: "LatoBold";
     font-size: 19px;
     opacity: 0.7;
