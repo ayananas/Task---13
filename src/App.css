@@ -66,6 +66,7 @@ p {
 .hidden {
     display: none;
 }
+
 br.clear {
     clear: both;
     line-height: 0;

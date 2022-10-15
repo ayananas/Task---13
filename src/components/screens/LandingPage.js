@@ -1,13 +1,9 @@
-import React, { useState } from "react";
+import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
+import Radio from "./Radio";
 
 function LandingPage() {
-    const [select, setSelect] = useState("betterPriceOnly");
-    const handleSelectChange = (event) => {
-        const value = event.target.value;
-        setSelect(value);
-    };
     return (
         <>
             <Navbar />
@@ -254,93 +250,69 @@ function LandingPage() {
                                     </ContactDetails>
                                 </Owner>
                                 <Insurance>
-                                    <InsuranceHeading>
-                                        Insurance Options
-                                    </InsuranceHeading>
-                                    <Item1>
-                                        <RadioButton
-                                            type="radio"
-                                            name="radio"
-                                            value="No Insurance"
-                                            checked={select === "No Insurance"}
-                                            onChange={(event) =>
-                                                handleSelectChange(event)
-                                            }
-                                        />
-                                        <RadioButtonLabel />
-                                        <InsurePolicy>
-                                            <InsuranceLeft>
-                                                <Insure>No Insurance</Insure>
-                                                <InsureContent>
-                                                    No Insurance selected
-                                                </InsureContent>
-                                            </InsuranceLeft>
-                                            <InsuranceRight>
-                                                <Dollar>$0.00</Dollar>
-                                                <DollarDay>$14/day</DollarDay>
-                                            </InsuranceRight>
-                                        </InsurePolicy>
-                                    </Item1>
-                                    <Item1>
-                                        <RadioButton
-                                            type="radio"
-                                            name="radio"
-                                            value="Collision protection"
-                                            checked={
-                                                select ===
-                                                "Collision protection"
-                                            }
-                                            onChange={(event) =>
-                                                handleSelectChange(event)
-                                            }
-                                        />
-                                        <RadioButtonLabel />
-                                        <InsurePolicy>
-                                            <InsuranceLeft>
-                                                <Insure>
-                                                    Collision protection
-                                                </Insure>
-                                                <InsureContent>
-                                                    collision protection on
-                                                    vechile only
-                                                </InsureContent>
-                                            </InsuranceLeft>
-                                            <InsuranceRight>
-                                                <Dollar>$0.00</Dollar>
-                                                <DollarDay>$14/day</DollarDay>
-                                            </InsuranceRight>
-                                        </InsurePolicy>
-                                    </Item1>
-                                    <Item1>
-                                        <RadioButton
-                                            type="radio"
-                                            name="radio"
-                                            value="Third party"
-                                            checked={select === "Third party"}
-                                            onChange={(event) =>
-                                                handleSelectChange(event)
-                                            }
-                                        />
-                                        <RadioButtonLabel />
-                                        <InsurePolicy>
-                                            <InsuranceLeft>
-                                                <Insure>Third party</Insure>
-                                                <InsureContent>
-                                                    3rd party liability
-                                                    insurance only
-                                                </InsureContent>
-                                            </InsuranceLeft>
-                                            <InsuranceRight>
-                                                <Dollar>$0.00</Dollar>
-                                                <DollarDay>$14/day</DollarDay>
-                                            </InsuranceRight>
-                                        </InsurePolicy>
-                                    </Item1>
+                                    <Radio />
                                 </Insurance>
                             </Right>
                         </DetailsContainer>
                     </LeftContainer>
-                    <RightContainer></RightContainer>
+                    <RightContainer>
+                        <Rent>
+                            <RentHeader>Rent Details</RentHeader>
+                            <RentItems>
+                                <RentItem>
+                                    <Up>Pick Up</Up>
+                                    <Down>
+                                        <LFT>Sampangan</LFT>
+                                        <RGT>29/11/2021 - 07:00AM</RGT>
+                                    </Down>
+                                </RentItem>
+                                <RentItem>
+                                    <Up>Drop Off</Up>
+                                    <Down>
+                                        <LFT>Sumatra</LFT>
+                                        <RGT>1/12/2021 - 09:00PM</RGT>
+                                    </Down>
+                                </RentItem>
+                                <RentItem>
+                                    <Up>Daily Rate</Up>
+                                    <Down>
+                                        <LFT>3 days@ $33.00</LFT>
+                                        <RGT>$99.00</RGT>
+                                    </Down>
+                                </RentItem>
+                            </RentItems>
+                            <HR />
+                            <RentChargeLists>
+                                <RentChargeList>
+                                    <Charge>Estimated Milage Charge</Charge>
+                                    <Rate>$120.00</Rate>
+                                </RentChargeList>
+                                <RentChargeList>
+                                    <Charge>No worries on the vechile</Charge>
+                                    <Rate>$52.00</Rate>
+                                </RentChargeList>
+                                <RentChargeList>
+                                    <Charge>Sales Tax</Charge>
+                                    <Rate>$10.00</Rate>
+                                </RentChargeList>
+                                <RentChargeList>
+                                    <LastCharge>Total</LastCharge>
+                                    <LastRate>$151.00</LastRate>
+                                </RentChargeList>
+                            </RentChargeLists>
+                            <RentButton>Rent Now</RentButton>
+                        </Rent>
+                        <MoreDetails>
+                            <More>More Campervan</More>
+                            <View>View more</View>
+                        </MoreDetails>
+                        <LastImage>
+                            <LastImg
+                                alt="image"
+                                src={require("../../assets/last-image.jpg")}
+                            />
+                        </LastImage>
+                    </RightContainer>
                 </Container>
             </SubContainer>
         </>
@@ -406,7 +378,8 @@ const Container = styled.section`
 const LeftContainer = styled.div`
     width: 70%;
     background: #fff;
-    padding: 20px 25px;
+    padding: 25px;
+    padding-bottom: 20px;
     border-radius: 12px;
     display: flex;
     flex-direction: column;
@@ -578,97 +551,120 @@ const PhoneImg = styled.img`
     width: 100%;
 `;
 const Insurance = styled.div``;
-const InsuranceHeading = styled.h4`
-    margin-bottom: 40px;
-    font-size: 20px;
-    font-family: "LatoBold";
-`;
 const RightContainer = styled.div`
     width: 30%;
+    margin-left: 20px;
 `;
-const Item1 = styled.div`
+const Rent = styled.div`
+    background: #fff;
+    border-radius: 12px;
+    padding: 25px;
+`;
+const RentHeader = styled.h4`
+    text-align: center;
+    background: #ebebff;
+    width: 40%;
+    margin: 0 auto;
+    padding: 18px;
+    font-family: "LatoBlack";
+    opacity: 0.9;
+    font-size: 18px;
+    border-radius: 25px;
+`;
+const RentItems = styled.ul`
+    margin-top: 25px;
+`;
+const RentItem = styled.li`
+    margin-bottom: 24px;
+`;
+const Up = styled.h6`
+    font-family: "LatoBold";
+    font-size: 19px;
+    opacity: 0.7;
+    margin-bottom: 14px;
+`;
+const Down = styled.div`
     display: flex;
-    align-items: center;
-    height: 64px;
-    position: relative;
+    justify-content: space-between;
+    opacity: 0.3;
 `;
-
-const RadioButtonLabel = styled.label`
-    position: absolute;
-    top: 25%;
-    left: 4px;
-    width: 24px;
-    height: 24px;
-    border-radius: 50%;
-    background: white;
-    border: 1px solid #bebebe;
+const LFT = styled.span`
+    font-family: "LatoBold";
+    font-size: 17px;
+    display: block;
 `;
-const RadioButton = styled.input`
-    opacity: 0;
-    z-index: 1;
-    border-radius: 50%;
-    width: 24px;
-    height: 24px;
-    margin-right: 10px;
-    &:hover ~ ${RadioButtonLabel} {
-        background: #bebebe;
-        &::after {
-            content: "";
-            display: block;
-            border-radius: 50%;
-            width: 12px;
-            height: 12px;
-            margin: 6px;
-            background: #eeeeee;
-        }
-    }
-    ${(props) =>
-        props.checked &&
-        ` 
-    &:checked + ${RadioButtonLabel} {
-      background: #fff;
-      border: 2px solid grey;
-      &::after {
-        content: "";
-        display: block;
-        border-radius: 50%;
-        width: 14px;
-        height: 14px;
-        margin: 3px;
-        box-shadow: 1px 3px 3px 1px rgba(0, 0, 0, 0.1);
-        background: #FF724A;
-      }
-    }
-  `}
+const RGT = styled.small`
+    font-family: "LatoBold";
+    font-size: 17px;
+    display: block;
 `;
-const InsurePolicy = styled.div`
+const HR = styled.hr`
+    border-top: 1px solid #000;
+    margin-bottom: 25px;
+`;
+const RentChargeLists = styled.ul``;
+const RentChargeList = styled.li`
     display: flex;
-    align-items: center;
-    margin-left: 15px;
-    width: 80%;
+    justify-content: space-between;
+    margin-bottom: 15px;
+    &:last-child {
+        margin-top: 35px;
+    }
+`;
+const Charge = styled.p`
+    font-family: "LatoBold";
+    opacity: 0.4;
+`;
+const Rate = styled.span`
+    display: block;
+    font-family: "LatoBold";
+    opacity: 0.6;
+`;
+const LastCharge = styled.p`
+    font-family: "LatoBold";
+    opacity: 1;
+    font-size: 20px;
+`;
+const LastRate = styled.span`
+    display: block;
+    font-family: "LatoBold";
+    opacity: 0.8;
+    font-size: 18px;
+`;
+const RentButton = styled.div`
+    text-align: center;
+    background: #ff724a;
+    width: 95%;
+    margin: 0 auto;
+    margin-top: 40px;
+    padding: 18px;
+    font-family: "LatoRegular";
+    opacity: 0.9;
+    font-size: 17px;
+    color: #fff;
+    border-radius: 25px;
+`;
+const MoreDetails = styled.div`
+    padding: 25px 0;
+    display: flex;
     justify-content: space-between;
 `;
-const InsuranceLeft = styled.div``;
-const Insure = styled.span`
-    display: block;
+const More = styled.small`
     font-family: "LatoBold";
+    font-size: 20px;
+    opacity: 0.8;
 `;
-const InsureContent = styled.p`
-    display: block;
+const View = styled.small`
     font-family: "LatoBold";
-    opacity: 0.5;
     font-size: 15px;
+    opacity: 0.6;
 `;
-const InsuranceRight = styled.div`
-    text-align: right;
+const LastImage = styled.div`
+    width: 99%;
+    margin: 0 auto;
 `;
-const Dollar = styled.span`
+const LastImg = styled.img`
     display: block;
-    font-family: "LatoBlack";
-`;
-const DollarDay = styled.p`
-    display: block;
-    font-family: "LatoBlack";
-    opacity: 0.5;
-	font-size: 15px;
+    width: 100%;
+    border-radius: 15px;
 `;
