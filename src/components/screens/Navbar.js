@@ -48,6 +48,9 @@ const Header = styled.header`
     align-items: center;
     padding: 0 100px 0 180px;
     height: 150px;
+    @media all and (max-width: 1440px) {
+        height: 120px;
+    }
 `;
 const LeftContainer = styled.div`
     display: flex;
@@ -58,7 +61,6 @@ const LeftContainer = styled.div`
 const Heading = styled.h1`
     font-size: 35px;
     font-family: "LatoBold";
-    margin-right: 50px;
 `;
 const Form = styled.form`
     display: flex;
@@ -67,6 +69,9 @@ const Form = styled.form`
     padding: 18px 30px;
     width: 70%;
     border-radius: 15px;
+    @media all and (max-width: 1440px) {
+        width: 65%;
+    }
 `;
 const Input = styled.input`
     font-family: "LatoBold";

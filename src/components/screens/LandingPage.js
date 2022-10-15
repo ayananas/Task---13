@@ -212,22 +212,24 @@ function LandingPage() {
                             <Right>
                                 <Owner>
                                     <OwnerTitle>Owner</OwnerTitle>
-                                    <ContactDetails>
-                                        <OwnerImage>
-                                            <OwnerImg
-                                                alt="owner"
-                                                src={require("../../assets/owner-avatar.jpg")}
-                                            />
-                                        </OwnerImage>
-                                        <OwnerId>
-                                            <OwnerName>
-                                                Charlie Septimus
-                                            </OwnerName>
-                                            <OwnerUserName>
-                                                @chatliesetimusvan
-                                            </OwnerUserName>
-                                        </OwnerId>
-                                        <OwnerDetails>
+                                    <OwnerDetails>
+                                        <OwnerBio>
+                                            <OwnerImage>
+                                                <OwnerImg
+                                                    alt="owner"
+                                                    src={require("../../assets/owner-avatar.jpg")}
+                                                />
+                                            </OwnerImage>
+                                            <OwnerId>
+                                                <OwnerName>
+                                                    Charlie Septimus
+                                                </OwnerName>
+                                                <OwnerUserName>
+                                                    @chatliesetimusvan
+                                                </OwnerUserName>
+                                            </OwnerId>
+                                        </OwnerBio>
+                                        <OwnerContactDetails>
                                             <OwnerMessage>
                                                 <MessageImg
                                                     alt="message"
@@ -246,8 +248,8 @@ function LandingPage() {
                                                     }
                                                 />
                                             </OwnerPhone>
-                                        </OwnerDetails>
-                                    </ContactDetails>
+                                        </OwnerContactDetails>
+                                    </OwnerDetails>
                                 </Owner>
                                 <Insurance>
                                     <Radio />
@@ -306,12 +308,14 @@ function LandingPage() {
                             <More>More Campervan</More>
                             <View>View more</View>
                         </MoreDetails>
-                        <LastImage>
-                            <LastImg
-                                alt="image"
-                                src={require("../../assets/last-image.jpg")}
-                            />
-                        </LastImage>
+                        <Last>
+                            <LastImage>
+                                <LastImg
+                                    alt="image"
+                                    src={require("../../assets/last-image.jpg")}
+                                />
+                            </LastImage>
+                        </Last>
                     </RightContainer>
                 </Container>
             </SubContainer>
@@ -326,11 +330,16 @@ const SubContainer = styled.section`
 `;
 const MenuBar = styled.aside`
     width: 7%;
-    padding: 0 55px;
+    @media all and (max-width: 1440px) {
+        padding: 0 35px;
+    }
 `;
 const MenuList = styled.ul`
-    display: flex;
-    flex-direction: column;
+    width: 30%;
+    margin: 0 auto;
+    @media all and (max-width: 1440px) {
+        width: 100%;
+    }
 `;
 const Item = styled.li`
     margin-bottom: 80px;
@@ -381,8 +390,6 @@ const LeftContainer = styled.div`
     padding: 25px;
     padding-bottom: 20px;
     border-radius: 12px;
-    display: flex;
-    flex-direction: column;
 `;
 const ImageContainer = styled.div`
     display: flex;
@@ -408,6 +415,29 @@ const ContentImage = styled.li`
     width: 100%;
     &:nth-child(2) {
         margin-top: 20px;
+        position: relative;
+        &::before {
+            content: "";
+            position: absolute;
+            width: 100%;
+            background: #312e2ec7;
+            border-radius: 15px;
+            height: 100%;
+            margin: 0 auto;
+            color: #fff;
+        }
+        &::after {
+            content: "10+ Photos";
+            position: absolute;
+            top: 50%;
+            left: 35%;
+            color: #fff;
+            font-family: "LatoBold";
+            @media all and (max-width: 1440px) {
+                top: 45%;
+                left: 30%;
+            }
+        }
     }
 `;
 const ContentImg = styled.img`
@@ -422,9 +452,15 @@ const DetailsContainer = styled.div`
 `;
 const Left = styled.div`
     width: 48%;
+    @media all and (max-width: 1440px) {
+        width: 48%;
+    }
 `;
 const Review = styled.div`
     margin-bottom: 30px;
+    @media all and (max-width: 1440px) {
+        margin-bottom: 40px;
+    }
 `;
 const Heading3 = styled.h3`
     font-size: 30px;
@@ -457,6 +493,9 @@ const Description = styled.p`
     opacity: 0.7;
     font-family: "LatoBold";
     width: 70%;
+    @media all and (max-width: 1440px) {
+        width: 100%;
+    }
 `;
 const Include = styled.div``;
 const Headline = styled.h4`
@@ -464,6 +503,9 @@ const Headline = styled.h4`
     font-family: "LatoBold";
     opacity: 0.8;
     margin-bottom: 20px;
+    @media all and (max-width: 1440px) {
+        margin-bottom: 25px;
+    }
 `;
 const FacilityItems = styled.ul`
     display: flex;
@@ -475,6 +517,10 @@ const FacilityItem = styled.li`
     align-items: center;
     width: 48%;
     margin-bottom: 10px;
+    @media all and (max-width: 1440px) {
+        width: 50%;
+        margin-bottom: 25px;
+    }
 `;
 const FacilityImage = styled.div`
     margin-right: 10px;
@@ -495,19 +541,35 @@ const Right = styled.div`
 `;
 const Owner = styled.div`
     margin-bottom: 95px;
+    @media all and (max-width: 1440px) {
+        margin-top: 25px;
+        margin-bottom: 100px;
+    }
+`;
+const OwnerDetails = styled.div`
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
 `;
 const OwnerTitle = styled.h4`
     font-size: 25px;
     font-family: "LatoBold";
     margin-bottom: 12px;
+    @media all and (max-width: 1440px) {
+        font-size: 28px;
+    }
 `;
-const ContactDetails = styled.div`
+const OwnerBio = styled.div`
     display: flex;
+    width: 75%;
     align-items: center;
 `;
 const OwnerImage = styled.div`
-    width: 70px;
-    margin-right: 15px;
+    width: 18%;
+    margin-right: 10px;
+    @media all and (max-width: 1440px) {
+        width: 22%;
+    }
 `;
 const OwnerImg = styled.img`
     display: block;
@@ -519,32 +581,47 @@ const OwnerName = styled.h2`
     font-size: 20px;
     font-family: "LatoBold";
     margin-bottom: 10px;
+    @media all and (max-width: 1440px) {
+        font-size: 18px;
+        margin-bottom: 5px;
+    }
 `;
 const OwnerUserName = styled.blockquote`
     font-size: 18px;
     font-family: "LatoBold";
     opacity: 0.4;
+    @media all and (max-width: 1440px) {
+        font-size: 16px;
+    }
 `;
-const OwnerDetails = styled.div`
+const OwnerContactDetails = styled.div`
     display: flex;
-    margin-left: 80px;
+    align-items: center;
+    justify-content: space-between;
+    width: 25%;
 `;
+
 const OwnerMessage = styled.div`
-    width: 50px;
-    margin-right: 12px;
+    width: 45%;
     background: #ff724a66;
     padding: 10px;
     border-radius: 15px;
+    @media all and (max-width: 1440px) {
+        width: 48%;
+    }
 `;
 const MessageImg = styled.img`
     display: block;
     width: 100%;
 `;
 const OwnerPhone = styled.div`
-    width: 50px;
+    width: 45%;
     background: #379e635e;
     padding: 10px;
     border-radius: 15px;
+    @media all and (max-width: 1440px) {
+        width: 48%;
+    }
 `;
 const PhoneImg = styled.img`
     display: block;
@@ -570,9 +647,16 @@ const RentHeader = styled.h4`
     opacity: 0.9;
     font-size: 18px;
     border-radius: 25px;
+    @media all and (max-width: 1440px) {
+        width: 45%;
+        padding: 14px;
+    }
 `;
 const RentItems = styled.ul`
     margin-top: 25px;
+    @media all and (max-width: 1440px) {
+        margin-top: 20px;
+    }
 `;
 const RentItem = styled.li`
     margin-bottom: 24px;
@@ -582,6 +666,10 @@ const Up = styled.h5`
     font-size: 19px;
     opacity: 0.7;
     margin-bottom: 14px;
+    @media all and (max-width: 1440px) {
+        margin-bottom: 10px;
+        font-size: 18px;
+    }
 `;
 const Down = styled.div`
     display: flex;
@@ -601,14 +689,23 @@ const RGT = styled.small`
 const HR = styled.hr`
     border-top: 1px solid #000;
     margin-bottom: 25px;
+    @media all and (max-width: 1440px) {
+        margin-top: 40px;
+    }
 `;
 const RentChargeLists = styled.ul``;
 const RentChargeList = styled.li`
     display: flex;
     justify-content: space-between;
     margin-bottom: 15px;
+    @media all and (max-width: 1440px) {
+        margin-bottom: 12px;
+    }
     &:last-child {
         margin-top: 35px;
+        @media all and (max-width: 1440px) {
+            margin-top: 30px;
+        }
     }
 `;
 const Charge = styled.p`
@@ -638,16 +735,22 @@ const RentButton = styled.div`
     margin: 0 auto;
     margin-top: 40px;
     padding: 18px;
-    font-family: "LatoRegular";
+    font-family: "LatoBold";
     opacity: 0.9;
     font-size: 17px;
     color: #fff;
     border-radius: 25px;
+    @media all and (max-width: 1440px) {
+        margin-top: 30px;
+    }
 `;
 const MoreDetails = styled.div`
     padding: 25px 0;
     display: flex;
     justify-content: space-between;
+    @media all and (max-width: 1440px) {
+        padding: 15px 0;
+    }
 `;
 const More = styled.small`
     font-family: "LatoBold";
@@ -659,6 +762,7 @@ const View = styled.small`
     font-size: 15px;
     opacity: 0.6;
 `;
+const Last = styled.div``;
 const LastImage = styled.div`
     width: 99%;
     margin: 0 auto;
@@ -666,5 +770,6 @@ const LastImage = styled.div`
 const LastImg = styled.img`
     display: block;
     width: 100%;
+    height: 100%;
     border-radius: 15px;
 `;

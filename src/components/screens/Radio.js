@@ -43,7 +43,7 @@ function Radio() {
                     <InsuranceLeft>
                         <Insure>Collision protection</Insure>
                         <InsureContent>
-                            collision protection on vechile only
+                            collision on vechile only
                         </InsureContent>
                     </InsuranceLeft>
                     <InsuranceRight>
@@ -65,7 +65,7 @@ function Radio() {
                     <InsuranceLeft>
                         <Insure>Third party</Insure>
                         <InsureContent>
-                            3rd party liability insurance only
+                            3rd party insurance only
                         </InsureContent>
                     </InsuranceLeft>
                     <InsuranceRight>
