@@ -54,12 +54,19 @@ const Header = styled.header`
     @media all and (max-width: 1380px) {
         padding-left: 140px;
     }
+    @media all and (max-width: 1280px) {
+        padding-left: 50px;
+        padding-right: 40px;
+    }
 `;
 const LeftContainer = styled.div`
     display: flex;
     justify-content: space-between;
     align-items: center;
     width: 70%;
+    @media all and (max-width: 1280px) {
+        width: 73%;
+    }
 `;
 const Heading = styled.h1`
     font-size: 35px;
@@ -77,6 +84,10 @@ const Form = styled.form`
     border-radius: 15px;
     @media all and (max-width: 1440px) {
         width: 65%;
+    }
+    @media all and (max-width: 1280px) {
+        padding: 15px 25px;
+        width: 60%;
     }
 `;
 const Input = styled.input`

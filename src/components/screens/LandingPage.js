@@ -107,7 +107,7 @@ function LandingPage() {
                                             />
                                         </Star>
                                         <Rating>4.8</Rating>
-                                        available in{" "}
+                                        available in
                                         <Bold> &nbsp; all location &nbsp;</Bold>
                                         except genuk
                                     </ReviewPara>
@@ -330,16 +330,10 @@ const SubContainer = styled.section`
 `;
 const MenuBar = styled.aside`
     width: 7%;
-    @media all and (max-width: 1440px) {
-        padding: 0 35px;
-    }
 `;
 const MenuList = styled.ul`
     width: 30%;
     margin: 0 auto;
-    @media all and (max-width: 1440px) {
-        width: 100%;
-    }
 `;
 const Item = styled.li`
     margin-bottom: 80px;
@@ -349,19 +343,25 @@ const Item = styled.li`
     }
     &:first-child {
         margin-top: 10px;
+        @media all and (max-width: 1280px) {
+            margin-top: 45px;
+        }
     }
     &::after {
         content: "";
         position: absolute;
         bottom: -6px;
         left: -5px;
-        right: 0;
         width: 40px;
         height: 42px;
         background-color: #fe91727d;
         border-radius: 12px;
         z-index: -1;
         display: none;
+        @media all and (max-width: 1280px) {
+            bottom: -8px;
+            left: -7px;
+        }
     }
     &:hover::after {
         display: block;
@@ -369,6 +369,9 @@ const Item = styled.li`
 `;
 const Widget = styled.div`
     width: 30px;
+    @media all and (max-width: 1280px) {
+        width: 25px;
+    }
 `;
 const Icon = styled.img`
     display: block;
@@ -416,6 +419,9 @@ const ContentImage = styled.li`
     &:nth-child(2) {
         margin-top: 20px;
         position: relative;
+        @media all and (max-width: 1280px) {
+            margin-top: 11px;
+        }
         &::before {
             content: "";
             position: absolute;
@@ -436,6 +442,10 @@ const ContentImage = styled.li`
             @media all and (max-width: 1440px) {
                 top: 45%;
                 left: 30%;
+            }
+            @media all and (max-width: 1280px) {
+                top: 43%;
+                left: 23%;
             }
         }
     }
@@ -469,6 +479,9 @@ const Heading3 = styled.h3`
     @media all and (max-width: 1380px) {
         font-size: 27px;
     }
+    @media all and (max-width: 1280px) {
+        font-size: 23px;
+    }
 `;
 const ReviewPara = styled.p`
     display: flex;
@@ -491,6 +504,9 @@ const Rating = styled.span`
 `;
 const Bold = styled.span`
     color: #000;
+    @media all and (max-width: 1280px) {
+        display: none;
+    }
 `;
 const Description = styled.p`
     opacity: 0.7;
@@ -502,6 +518,9 @@ const Description = styled.p`
     @media all and (max-width: 1380px) {
         width: 380px;
     }
+    @media all and (max-width: 1280px) {
+        display: none;
+    }
 `;
 const Include = styled.div``;
 const Headline = styled.h4`
@@ -511,6 +530,10 @@ const Headline = styled.h4`
     margin-bottom: 20px;
     @media all and (max-width: 1440px) {
         margin-bottom: 25px;
+    }
+    @media all and (max-width: 1280px) {
+        margin-bottom: 35px;
+        font-size: 25px;
     }
 `;
 const FacilityItems = styled.ul`
@@ -527,12 +550,18 @@ const FacilityItem = styled.li`
         width: 50%;
         margin-bottom: 25px;
     }
+    @media all and (max-width: 1280px) {
+        width: 90%;
+    }
 `;
 const FacilityImage = styled.div`
     margin-right: 10px;
     background-color: #fe917230;
     padding: 8px;
     border-radius: 10px;
+    @media all and (max-width: 1280px) {
+        width: 45px;
+    }
 `;
 const FacilityImg = styled.img`
     display: block;
@@ -544,6 +573,9 @@ const FacilityContent = styled.span`
 `;
 const Right = styled.div`
     width: 42%;
+    @media all and (max-width: 1280px) {
+        width: 50%;
+    }
 `;
 const Owner = styled.div`
     margin-bottom: 95px;
@@ -564,17 +596,27 @@ const OwnerTitle = styled.h4`
     @media all and (max-width: 1440px) {
         font-size: 28px;
     }
+    @media all and (max-width: 1280px) {
+        font-size: 25px;
+    }
 `;
 const OwnerBio = styled.div`
     display: flex;
     width: 75%;
     align-items: center;
+    @media all and (max-width: 1280px) {
+        flex-wrap: wrap;
+    }
 `;
 const OwnerImage = styled.div`
     width: 18%;
     margin-right: 10px;
     @media all and (max-width: 1440px) {
         width: 22%;
+    }
+    @media all and (max-width: 1280px) {
+        width: 35%;
+        margin-bottom: 10px;
     }
 `;
 const OwnerImg = styled.img`
@@ -591,6 +633,9 @@ const OwnerName = styled.h2`
         font-size: 18px;
         margin-bottom: 5px;
     }
+    @media all and (max-width: 1280px) {
+        font-size: 20px;
+    }
 `;
 const OwnerUserName = styled.blockquote`
     font-size: 18px;
@@ -605,6 +650,9 @@ const OwnerContactDetails = styled.div`
     align-items: center;
     justify-content: space-between;
     width: 25%;
+    @media all and (max-width: 1280px) {
+        width: 38%;
+    }
 `;
 
 const OwnerMessage = styled.div`
@@ -660,6 +708,11 @@ const RentHeader = styled.h4`
     @media all and (max-width: 1380px) {
         width: 50%;
     }
+    @media all and (max-width: 1280px) {
+        width: 65%;
+        padding: 12px;
+        font-size: 14px;
+    }
 `;
 const RentItems = styled.ul`
     margin-top: 25px;
@@ -669,6 +722,11 @@ const RentItems = styled.ul`
 `;
 const RentItem = styled.li`
     margin-bottom: 24px;
+    &:last-child div small {
+        @media all and (max-width: 1280px) {
+            display: block;
+        }
+    }
 `;
 const Up = styled.h5`
     font-family: "LatoBold";
@@ -678,6 +736,10 @@ const Up = styled.h5`
     @media all and (max-width: 1440px) {
         margin-bottom: 10px;
         font-size: 18px;
+    }
+    @media all and (max-width: 1280px) {
+        margin-bottom: 5px;
+        font-size: 20px;
     }
 `;
 const Down = styled.div`
@@ -689,17 +751,27 @@ const LFT = styled.span`
     font-family: "LatoBold";
     font-size: 17px;
     display: block;
+    @media all and (max-width: 1280px) {
+        font-size: 16px;
+    }
 `;
 const RGT = styled.small`
     font-family: "LatoBold";
     font-size: 17px;
     display: block;
+    @media all and (max-width: 1280px) {
+        display: none;
+    }
 `;
 const HR = styled.hr`
     border-top: 1px solid #000;
     margin-bottom: 25px;
     @media all and (max-width: 1440px) {
         margin-top: 40px;
+    }
+    @media all and (max-width: 1280px) {
+        margin-top: 40px;
+        margin-bottom: 40px;
     }
 `;
 const RentChargeLists = styled.ul``;
@@ -709,6 +781,9 @@ const RentChargeList = styled.li`
     margin-bottom: 15px;
     @media all and (max-width: 1440px) {
         margin-bottom: 12px;
+    }
+    @media all and (max-width: 1280px) {
+        margin-bottom: 30px;
     }
     &:last-child {
         margin-top: 35px;
@@ -720,6 +795,9 @@ const RentChargeList = styled.li`
 const Charge = styled.p`
     font-family: "LatoBold";
     opacity: 0.4;
+    @media all and (max-width: 1280px) {
+        line-height: 1em;
+    }
 `;
 const Rate = styled.span`
     display: block;
@@ -752,13 +830,20 @@ const RentButton = styled.div`
     @media all and (max-width: 1440px) {
         margin-top: 30px;
     }
+    @media all and (max-width: 1280px) {
+        width: 90%;
+        padding: 15px;
+    }
 `;
 const MoreDetails = styled.div`
-    padding: 25px 0;
+    margin: 25px 0;
     display: flex;
     justify-content: space-between;
     @media all and (max-width: 1440px) {
-        padding: 15px 0;
+        margin: 15px 0;
+    }
+    @media all and (max-width: 1280px) {
+        margin: 33px 0;
     }
 `;
 const More = styled.small`
