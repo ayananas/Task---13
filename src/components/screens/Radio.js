@@ -80,6 +80,11 @@ const InsuranceHeading = styled.h4`
     margin-bottom: 40px;
     font-size: 20px;
     font-family: "LatoBold";
+    @media all and (max-width: 768px) {
+        margin-bottom: 20px;
+        font-size: 26px;
+        margin-top: 17px;
+    }
 `;
 const Item1 = styled.div`
     display: flex;
@@ -88,6 +93,9 @@ const Item1 = styled.div`
     position: relative;
     @media all and (max-width: 1080px) {
         height: 80px;
+    }
+    @media all and (max-width: 768px) {
+        height: 60px;
     }
 `;
 
@@ -163,6 +171,9 @@ const InsureContent = styled.p`
         line-height: 1em;
         font-size: 16px;
     }
+    @media all and (max-width: 768px) {
+        display: none;
+    }
 `;
 const InsuranceRight = styled.div`
     text-align: right;
@@ -176,4 +187,7 @@ const DollarDay = styled.p`
     font-family: "LatoBlack";
     opacity: 0.5;
     font-size: 15px;
+    @media all and (max-width: 768px) {
+        display: none;
+    }
 `;

@@ -89,6 +89,9 @@ const Form = styled.form`
         padding: 15px 25px;
         width: 60%;
     }
+    @media all and (max-width: 980px) {
+        display: none;
+    }
 `;
 const Input = styled.input`
     font-family: "LatoBold";
