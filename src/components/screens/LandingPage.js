@@ -386,6 +386,9 @@ const Container = styled.section`
     background: #ebebeb;
     display: flex;
     padding: 20px 25px;
+    @media all and (max-width: 1080px) {
+        padding: 20px;
+    }
 `;
 const LeftContainer = styled.div`
     width: 70%;

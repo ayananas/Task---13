@@ -42,9 +42,7 @@ function Radio() {
                 <InsurePolicy>
                     <InsuranceLeft>
                         <Insure>Collision protection</Insure>
-                        <InsureContent>
-                            collision on vechile only
-                        </InsureContent>
+                        <InsureContent>collision on vechile only</InsureContent>
                     </InsuranceLeft>
                     <InsuranceRight>
                         <Dollar>$0.00</Dollar>
@@ -64,9 +62,7 @@ function Radio() {
                 <InsurePolicy>
                     <InsuranceLeft>
                         <Insure>Third party</Insure>
-                        <InsureContent>
-                            3rd party insurance only
-                        </InsureContent>
+                        <InsureContent>3rd party insurance only</InsureContent>
                     </InsuranceLeft>
                     <InsuranceRight>
                         <Dollar>$0.00</Dollar>
@@ -90,6 +86,9 @@ const Item1 = styled.div`
     align-items: center;
     height: 64px;
     position: relative;
+    @media all and (max-width: 1080px) {
+        height: 80px;
+    }
 `;
 
 const RadioButtonLabel = styled.label`
@@ -100,7 +99,10 @@ const RadioButtonLabel = styled.label`
     height: 24px;
     border-radius: 50%;
     background: white;
-    border: 1px solid #bebebe;
+    border: 2px solid #bebebe;
+    @media all and (max-width: 1080px) {
+        top: 30%;
+    }
 `;
 const RadioButton = styled.input`
     opacity: 0;
@@ -157,6 +159,10 @@ const InsureContent = styled.p`
     font-family: "LatoBold";
     opacity: 0.5;
     font-size: 15px;
+    @media all and (max-width: 1080px) {
+        line-height: 1em;
+        font-size: 16px;
+    }
 `;
 const InsuranceRight = styled.div`
     text-align: right;
