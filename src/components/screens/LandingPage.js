@@ -336,6 +336,9 @@ const MenuBar = styled.aside`
     @media all and (max-width: 980px) {
         width: 15%;
     }
+    @media all and (max-width: 768px) {
+        display: none;
+    }
 `;
 const MenuList = styled.ul`
     width: 30%;
@@ -401,6 +404,9 @@ const Container = styled.section`
     @media all and (max-width: 980px) {
         display: block;
         width: 85%;
+    }
+    @media all and (max-width: 768px) {
+        width: 100%;
     }
 `;
 const LeftContainer = styled.div`
@@ -470,6 +476,11 @@ const ContentImage = styled.li`
                 top: 45%;
                 font-size: 13px;
                 left: 25%;
+            }
+            @media all and (max-width: 640px) {
+                top: 43%;
+                font-size: 11px;
+                left: 19%;
             }
         }
     }
@@ -759,7 +770,10 @@ const PhoneImg = styled.img`
     width: 100%;
 `;
 const Insurance = styled.div`
-    width: 60%;
+    width: 100%;
+    @media all and (max-width: 768px) {
+        width: 60%;
+    }
 `;
 const RightContainer = styled.div`
     width: 30%;

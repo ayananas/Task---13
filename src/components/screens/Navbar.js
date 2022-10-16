@@ -4,6 +4,12 @@ import styled from "styled-components";
 function Navbar() {
     return (
         <Header>
+            <MobileMenu>
+                <MenuImg
+                    alt="menu"
+                    src={require("../../assets/mobile-menu.png")}
+                />
+            </MobileMenu>
             <LeftContainer>
                 <Heading>My Cambervan</Heading>
                 <Form>
@@ -58,6 +64,13 @@ const Header = styled.header`
         padding-left: 50px;
         padding-right: 40px;
     }
+    @media all and (max-width: 768px) {
+        padding-left: 20px;
+        padding-right: 0px;
+    }
+    @media all and (max-width: 640px) {
+        height: 85px;
+    }
 `;
 const LeftContainer = styled.div`
     display: flex;
@@ -73,6 +86,13 @@ const Heading = styled.h1`
     font-family: "LatoBold";
     @media all and (max-width: 1380px) {
         font-size: 32px;
+    }
+    @media all and (max-width: 768px) {
+        width: 89%;
+        text-align: right;
+    }
+    @media all and (max-width: 640px) {
+        font-size: 30px;
     }
 `;
 const Form = styled.form`
@@ -107,6 +127,9 @@ const SearchImage = styled.img`
 `;
 const RightContainer = styled.div`
     display: flex;
+    @media all and (max-width: 768px) {
+        display: none;
+    }
 `;
 const Avatar = styled.div`
     width: 55px;
@@ -135,6 +158,17 @@ const Arrow = styled.div`
     margin-left: 8px;
 `;
 const ArrowImage = styled.img`
+    display: block;
+    width: 100%;
+`;
+const MobileMenu = styled.div`
+    display: none;
+    width: 11%;
+    @media all and (max-width: 768px) {
+        display: block;
+    }
+`;
+const MenuImg = styled.img`
     display: block;
     width: 100%;
 `;
