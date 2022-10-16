@@ -1,7 +1,7 @@
 import React from "react";
 import styled from "styled-components";
-import Navbar from "./Navbar";
 import Radio from "./Radio";
+import Navbar from "./Navbar";
 
 function LandingPage() {
     return (
@@ -425,10 +425,17 @@ const ImageContainer = styled.div`
 `;
 const BigImage = styled.div`
     width: 75%;
+    @media all and (max-width: 360px) {
+        width: 100%;
+    }
 `;
 const ImgCon = styled.div`
     width: 95%;
     height: 92%;
+    @media all and (max-width: 360px) {
+        width: 100%;
+        height: 100%;
+    }
 `;
 const BigImg = styled.img`
     display: block;
@@ -438,6 +445,9 @@ const BigImg = styled.img`
 `;
 const ImageList = styled.ul`
     width: 25%;
+    @media all and (max-width: 360px) {
+        display: none;
+    }
 `;
 const ContentImage = styled.li`
     width: 100%;
@@ -482,6 +492,11 @@ const ContentImage = styled.li`
                 font-size: 11px;
                 left: 19%;
             }
+            @media all and (max-width: 480px) {
+                top: 42%;
+                font-size: 8px;
+                left: 20%;
+            }
         }
     }
 `;
@@ -512,6 +527,9 @@ const Review = styled.div`
     @media all and (max-width: 1440px) {
         margin-bottom: 40px;
     }
+    @media all and (max-width: 480px) {
+        margin-bottom: 15px;
+    }
 `;
 const Heading3 = styled.h3`
     font-size: 30px;
@@ -530,6 +548,15 @@ const Heading3 = styled.h3`
     @media all and (max-width: 768px) {
         font-size: 25px;
     }
+    @media all and (max-width: 480px) {
+        font-size: 20px;
+        text-align: center;
+    }
+    @media all and (max-width: 360px) {
+        font-size: 18px;
+        margin-top: 10px;
+        margin-bottom: 10px;
+    }
 `;
 const ReviewPara = styled.p`
     display: flex;
@@ -539,6 +566,9 @@ const ReviewPara = styled.p`
     margin-bottom: 18px;
     @media all and (max-width: 768px) {
         font-size: 16px;
+    }
+    @media all and (max-width: 480px) {
+        flex-wrap: wrap;
     }
 `;
 const Star = styled.div`
@@ -552,6 +582,9 @@ const Rating = styled.span`
     font-size: 18px;
     margin-right: 12px;
     color: #000;
+    @media all and (max-width: 480px) {
+        width: 70%;
+    }
 `;
 const Bold = styled.span`
     color: #000;
@@ -575,8 +608,16 @@ const Description = styled.p`
     @media all and (max-width: 1280px) {
         display: none;
     }
+    @media all and (max-width: 480px) {
+        display: block;
+        width: 100%;
+    }
 `;
-const Include = styled.div``;
+const Include = styled.div`
+    @media all and (max-width: 480px) {
+        display: none;
+    }
+`;
 const Headline = styled.h4`
     font-size: 20px;
     font-family: "LatoBold";
@@ -641,6 +682,9 @@ const Right = styled.div`
         display: flex;
         width: 100%;
     }
+    @media all and (max-width: 480px) {
+        flex-wrap: wrap;
+    }
 `;
 const Owner = styled.div`
     margin-bottom: 95px;
@@ -654,6 +698,13 @@ const Owner = styled.div`
     }
     @media all and (max-width: 768px) {
         width: 40%;
+    }
+    @media all and (max-width: 480px) {
+        width: 100%;
+    }
+    @media all and (max-width: 480px) {
+        margin-bottom: 30px;
+        margin-top: 0;
     }
 `;
 const OwnerDetails = styled.div`
@@ -677,6 +728,9 @@ const OwnerTitle = styled.h4`
     @media all and (max-width: 768px) {
         font-size: 30px;
     }
+    @media all and (max-width: 480px) {
+        font-size: 25px;
+    }
 `;
 const OwnerBio = styled.div`
     display: flex;
@@ -684,6 +738,9 @@ const OwnerBio = styled.div`
     align-items: center;
     @media all and (max-width: 1280px) {
         flex-wrap: wrap;
+    }
+    @media all and (max-width: 480px) {
+        width: 80%;
     }
 `;
 const OwnerImage = styled.div`
@@ -695,6 +752,10 @@ const OwnerImage = styled.div`
     @media all and (max-width: 1280px) {
         width: 45%;
         margin-bottom: 20px;
+    }
+    @media all and (max-width: 480px) {
+        width: 25%;
+        margin-bottom: 0;
     }
 `;
 const OwnerImg = styled.img`
@@ -718,6 +779,9 @@ const OwnerName = styled.h2`
         font-size: 18px;
         margin-bottom: 0;
     }
+    @media all and (max-width: 480px) {
+        font-size: 15px;
+    }
 `;
 const OwnerUserName = styled.blockquote`
     font-size: 18px;
@@ -726,6 +790,7 @@ const OwnerUserName = styled.blockquote`
     @media all and (max-width: 1440px) {
         font-size: 16px;
     }
+    font-size: 14px;
 `;
 const OwnerContactDetails = styled.div`
     display: flex;
@@ -740,6 +805,10 @@ const OwnerContactDetails = styled.div`
     }
     @media all and (max-width: 768px) {
         width: 50%;
+    }
+    @media all and (max-width: 480px) {
+        width: 35%;
+        margin-top: 15px;
     }
 `;
 
@@ -773,6 +842,9 @@ const Insurance = styled.div`
     width: 100%;
     @media all and (max-width: 768px) {
         width: 60%;
+    }
+    @media all and (max-width: 480px) {
+        width: 100%;
     }
 `;
 const RightContainer = styled.div`

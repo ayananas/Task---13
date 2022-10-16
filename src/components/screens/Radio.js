@@ -85,6 +85,14 @@ const InsuranceHeading = styled.h4`
         font-size: 26px;
         margin-top: 17px;
     }
+    @media all and (max-width: 480px) {
+        margin-bottom: 10px;
+        font-size: 23px;
+        margin-top: 0px;
+    }
+    @media all and (max-width: 360px) {
+        text-align: center;
+    }
 `;
 const Item1 = styled.div`
     display: flex;
@@ -96,6 +104,9 @@ const Item1 = styled.div`
     }
     @media all and (max-width: 768px) {
         height: 60px;
+    }
+    @media all and (max-width: 480px) {
+        height: 45px;
     }
 `;
 

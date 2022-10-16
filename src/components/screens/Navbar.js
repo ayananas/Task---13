@@ -94,6 +94,9 @@ const Heading = styled.h1`
     @media all and (max-width: 640px) {
         font-size: 30px;
     }
+    @media all and (max-width: 360px) {
+        font-size: 25px;
+    }
 `;
 const Form = styled.form`
     display: flex;
