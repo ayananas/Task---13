@@ -2,9 +2,8 @@ import React from "react";
 import styled from "styled-components";
 import Navbar from "./Navbar";
 import Aside from "./Aside";
-import Car from "./Car";
 
-function LandingPage() {
+function All() {
     return (
         <>
             <Navbar />
@@ -13,14 +12,14 @@ function LandingPage() {
                     <Aside />
                 </MenuBar>
                 <Container>
-                    <Car />
+                    <div>All</div>
                 </Container>
             </SubContainer>
         </>
     );
 }
 
-export default LandingPage;
+export default All;
 
 const SubContainer = styled.section`
     display: flex;
