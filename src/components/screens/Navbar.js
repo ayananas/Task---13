@@ -1,14 +1,12 @@
 import React from "react";
 import styled from "styled-components";
+import Hamburger from "./Hamburger";
 
 function Navbar() {
     return (
         <Header>
             <MobileMenu>
-                <MenuImg
-                    alt="menu"
-                    src={require("../../assets/mobile-menu.png")}
-                />
+                <Hamburger />
             </MobileMenu>
             <LeftContainer>
                 <Heading>My Cambervan</Heading>
@@ -164,14 +162,4 @@ const ArrowImage = styled.img`
     display: block;
     width: 100%;
 `;
-const MobileMenu = styled.div`
-    display: none;
-    width: 11%;
-    @media all and (max-width: 768px) {
-        display: block;
-    }
-`;
-const MenuImg = styled.img`
-    display: block;
-    width: 100%;
-`;
+const MobileMenu = styled.div``;

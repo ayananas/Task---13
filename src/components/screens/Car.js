@@ -1,8 +1,10 @@
-import React from "react";
+import React, { useState } from "react";
 import styled from "styled-components";
 import Radio from "./Radio";
+import Popup from "./Popup";
 
 function Car() {
+    const [pop, setPop] = useState(false);
     return (
         <>
             <LeftContainer>
@@ -22,12 +24,51 @@ function Car() {
                                 alt="top-image"
                             />
                         </ContentImage>
-                        <ContentImage>
+                        <ContentImage
+                            onClick={() => {
+                                if (true === Boolean(pop)) {
+                                    setPop(false);
+                                } else {
+                                    setPop(true);
+                                }
+                            }}
+                        >
                             <ContentImg
                                 src={require("../../assets/bottom-image.jpg")}
                                 alt="bottom-image"
                             />
                         </ContentImage>
+                        {pop && (
+                            <>
+                                <div
+                                    onClick={() => {
+                                        setPop(false);
+                                    }}
+                                    style={{
+                                        backdropfilter: "blur(5px)",
+                                        position: "fixed",
+                                        right: "0%",
+                                        width: "100%",
+                                        display: "flex",
+                                        alignItems: "center",
+                                        justifyContent: "center",
+                                        height: "100%",
+                                        zIndex: "10",
+                                        bottom: "2%",
+                                    }}
+                                ></div>
+                                <div
+                                    style={{
+                                        position: "absolute",
+                                        zIndex: "100",
+                                        right: "400px",
+                                        top: "35%",
+                                    }}
+                                >
+                                    <Popup />
+                                </div>
+                            </>
+                        )}
                     </ImageList>
                 </ImageContainer>
                 <DetailsContainer>

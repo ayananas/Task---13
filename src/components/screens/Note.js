@@ -12,7 +12,12 @@ function Note() {
                     <Aside />
                 </MenuBar>
                 <Container>
-                    <div>note</div>
+                    <NoteImage>
+                        <NoteImg
+                            src={require("../../assets/note-image.jpg")}
+                            alt="note"
+                        />
+                    </NoteImage>
                 </Container>
             </SubContainer>
         </>
@@ -51,4 +56,12 @@ const Container = styled.section`
     @media all and (max-width: 768px) {
         width: 100%;
     }
+`;
+const NoteImage = styled.div`
+    width: 100%;
+`;
+const NoteImg = styled.img`
+    width: 100%;
+    display: block;
+    border-radius: 15px;
 `;

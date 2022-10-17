@@ -5,6 +5,7 @@ import All from "./components/screens/All";
 import Calender from "./components/screens/Calender";
 import Note from "./components/screens/Note";
 import Chat from "./components/screens/Chat";
+import Sliderr from "./components/screens/Sliderr";
 
 function App() {
     return (

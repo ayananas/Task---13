@@ -12,7 +12,12 @@ function Calender() {
                     <Aside />
                 </MenuBar>
                 <Container>
-                    <div>Calender</div>
+                    <CalenderImage>
+                        <CalenderImg
+                            src={require("../../assets/calender-image.jpg")}
+                            alt="calender"
+                        />
+                    </CalenderImage>
                 </Container>
             </SubContainer>
         </>
@@ -51,4 +56,12 @@ const Container = styled.section`
     @media all and (max-width: 768px) {
         width: 100%;
     }
+`;
+const CalenderImage = styled.div`
+    width: 100%;
+`;
+const CalenderImg = styled.img`
+    width: 100%;
+    display: block;
+    border-radius: 15px;
 `;

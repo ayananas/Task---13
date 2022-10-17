@@ -12,7 +12,12 @@ function Chat() {
                     <Aside />
                 </MenuBar>
                 <Container>
-                    <div>Chat</div>
+                    <ChatImage>
+                        <ChatImg
+                            src={require("../../assets/chat-image.jpg")}
+                            alt="chat"
+                        />
+                    </ChatImage>
                 </Container>
             </SubContainer>
         </>
@@ -51,4 +56,13 @@ const Container = styled.section`
     @media all and (max-width: 768px) {
         width: 100%;
     }
+`;
+
+const ChatImage = styled.div`
+    width: 100%;
+`;
+const ChatImg = styled.img`
+    width: 100%;
+    display: block;
+    border-radius: 15px;
 `;
