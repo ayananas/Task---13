@@ -120,3 +120,8 @@ br.clear {
     left: 30px !important;
     z-index: 100 !important;
 }
+@media all and (max-width: 480px) {
+    .slick-dots li button:before {
+        font-size: 10px !important;
+    }
+}

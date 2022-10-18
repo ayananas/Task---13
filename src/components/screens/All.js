@@ -12,7 +12,12 @@ function All() {
                     <Aside />
                 </MenuBar>
                 <Container>
-                    <div>All</div>
+                    <MenuImage>
+                        <MenuImg
+                            src={require("../../assets/menu-image.jpg")}
+                            alt="chat"
+                        />
+                    </MenuImage>
                 </Container>
             </SubContainer>
         </>
@@ -51,4 +56,12 @@ const Container = styled.section`
     @media all and (max-width: 768px) {
         width: 100%;
     }
+`;
+const MenuImage = styled.div`
+    width: 100%;
+`;
+const MenuImg = styled.img`
+    width: 100%;
+    display: block;
+    border-radius: 15px;
 `;

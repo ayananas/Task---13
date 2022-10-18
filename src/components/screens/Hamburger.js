@@ -29,9 +29,10 @@ const MenuLink = styled(NavLink)`
     cursor: pointer;
     text-align: center;
     text-decoration: none;
-    color: #9e9696;
+    color: #fff;
     transition: all 0.3s ease-in;
-    font-size: 14px;
+    font-size: 18px;
+    font-weight: bold;
     &:hover {
         color: #000;
     }
@@ -64,7 +65,7 @@ const Menu = styled.div`
         height: ${({ isOpen }) => (isOpen ? "400px" : "0")};
         transition: max-height 0.3s ease-in;
         width: 100%;
-        background-color: #ff724a54;
+        background-color: #ff724a9e;
         z-index: 7;
     }
 `;

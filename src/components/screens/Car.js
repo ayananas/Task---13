@@ -57,16 +57,9 @@ function Car() {
                                         bottom: "2%",
                                     }}
                                 ></div>
-                                <div
-                                    style={{
-                                        position: "absolute",
-                                        zIndex: "100",
-                                        right: "400px",
-                                        top: "35%",
-                                    }}
-                                >
+                                <SliderBox>
                                     <Popup />
-                                </div>
+                                </SliderBox>
                             </>
                         )}
                     </ImageList>
@@ -924,4 +917,19 @@ const LastImg = styled.img`
     width: 100%;
     height: 100%;
     border-radius: 15px;
+`;
+const SliderBox = styled.div`
+    position: absolute;
+    z-index: 100;
+    right: 400px;
+    top: 35%;
+    @media all and (max-width: 1080px) {
+       right: 330px;
+    }
+    @media all and (max-width: 980px) {
+        right: 60px;
+    }
+    @media all and (max-width: 640px) {
+        right: 43px;
+    }
 `;

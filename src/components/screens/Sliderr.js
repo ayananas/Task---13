@@ -104,6 +104,18 @@ const SliderImage = styled.div`
     width: 60%;
     margin: 0 auto;
     background-color: black;
+    @media all and (max-width: 1080px) {
+        width: 25%;
+    }
+    @media all and (max-width: 980px) {
+        width: 30%;
+    }
+    @media all and (max-width: 640px) {
+        width: 75%;
+    }
+    @media all and (max-width: 480px) {
+        width: 35%;
+    }
 `;
 const SliderImg = styled.img`
     display: block;
